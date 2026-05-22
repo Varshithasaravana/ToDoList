@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w-50 mx-auto border rounded-3 p-4 shadow-sm mt-5 text-center bg-light">
+
+    <h1 class="text-danger">
+        Delete Task
+    </h1>
+
+    <p class="fs-5">
+        Do you want to delete "{{items}}" ?
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input
+            type="submit"
+            value="Delete"
+            class="btn btn-danger"
+        >
+
+        <a
+            href="{% url 'list' %}"
+            class="btn btn-secondary"
+        >
+            Cancel
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock content %}
